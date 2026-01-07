@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react"; 
+import Footer from "./Footer";
 
 const justifyMap = {
   "justify-start": "flex-start",
@@ -61,12 +62,18 @@ export default function Flex() {
         <div className="bg-slate-800 rounded-xl p-6 border border-slate-600">
           <div className={`bg-slate-900 flex ${flexDir === 'column' ? 'flex-col' : 'flex-row'} ${justify} gap-4 p-5 border-2 border-dashed border-slate-700`}>
              {[1, 2, 3].map(i => (
-               <div key={i} className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center font-bold">ITEM {i}</div>
+               // Change this line in your .map() functions:
+<div key={i} className="min-w-[60px] min-h-[60px] md:w-24 md:h-24 bg-linear-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center font-bold text-xs md:text-base">
+  ITEM {i}
+</div>
              ))}
           </div>
         </div>
         <pre className="bg-slate-900 p-6 rounded-xl text-emerald-400 font-mono text-sm">{cssCode}</pre>
-      </section>
-    </div>
+      </section> 
+
+    </div> 
+
+    
   );
 }
